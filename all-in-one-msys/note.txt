@@ -1,0 +1,62 @@
+- Installare Msys + Mingw
+    Packages: mingw msys g++ autoconf
+
+  - [DONE] Separati come per default, Msys in <Mingw>\msys\1.0
+  - Uso come path solo <Mingw>\bin
+  - [DONE] Bisogna editare il file fstab o eseguire il postscript per legare 
+    i due ambienti
+  - [DONE] Se non lo fa in automatico, fare un "collegamento" a msys.bat in <Mingw>\bin
+
+- Installare Git for windows
+    ( Per compilare
+      Sources: https://github.com/msysgit/git/zipball/master
+      Packages: openssl openssh zlib expat msys-perl gettext
+
+      curl & libcurl
+        http://gknw.itex.at/mirror/curl/win32/curl-7.19.4-devel-mingw32.zip
+        http://www.gknw.de/mirror/curl/win32/curl-7.24.0-devel-mingw32.zip
+      
+      wish
+        http://prdownloads.sourceforge.net/tcl/tcl8511-src.zip
+        http://prdownloads.sourceforge.net/tcl/tk8511-src.zip
+
+      [DONE] download & extract tk, tcl zip files in home
+      mkdir -p build/tcl && mkdir -p build/tk
+      cd ~/build/tcl
+      ~/<tcl_dir>/win/configure --prefix=/
+      make && make install
+
+      cd ~/build/tk
+      ~/<tk_dir>/win/configure --prefix=/ --with-tcl=~/build/tcl
+      make && make install
+
+      [DONE] download curl & libcurl from link above
+    )
+
+    Packages: openssl openssh zlib expat msys-perl gettext vim crypt rxvt iconv
+
+  - Viene fornito con una versione ridotta all'osso di msys
+  - Copio in <Msys> senza sovrascrivere i file esistenti.
+    Attenzione ai file che non hanno estensione in git (es: pwd e pwd.exe)
+
+- Installare Putty
+  - Scarico dal sito, installo in cartella a parte
+  - Ci integro anche "plink-key-agent"
+
+- Installo Ruby
+  - Scarico dal sito il pacchetto
+  - Copio in <Msys> o <Mingw>?
+
+- Installo dei pacchetti Ruby
+  - Sass
+  - ...
+
+- Installare Console 2
+    Packages: msys-console
+
+  - Eseguire console-config da bash o sh.
+  - Usare -a per x64
+  - Cambiare assolutamente la configurazione: schema colori e titoli schede
+
+
+mingw-get install mingw msys g++ autoconf msys-console msys-openssl msys-openssh zlib expat msys-perl gettext msys-vim msys-crypt msys-rxvt msys-iconv 
